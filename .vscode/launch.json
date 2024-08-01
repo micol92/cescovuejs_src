@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run cescovueapp02-cescovuemd01",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/cescovueapp02-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/cescovuemd01/index.html"
+      ],
+      "cwd": "${workspaceFolder}/cescovuemd01",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "dist",
+        "run.config": "{\"handlerId\":\"html5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/cescovueapp02/cescovuemd01\"}"
+      },
+      "envFile": "${workspaceFolder}/cescovuemd01/.env1",
+      "preLaunchTask": "Run cescovueapp02"
+    }
+  ]
+}

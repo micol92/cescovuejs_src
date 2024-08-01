@@ -1,0 +1,29 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "source": "^/cap_api_dest_cesco/(.*)$",
+      "destination": "cap_api_dest_cesco",
+      "target": "$1"
+    },
+    {
+      "authenticationType": "none",
+      "csrfProtection": false,
+      "source": "^/cap_api_dest_cesco2/(.*)$",
+      "destination": "cap_api_dest_cesco2",
+      "target": "$1"
+    },    
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

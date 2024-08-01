@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run cescovueapp02",
+      "type": "shell",
+      "dependsOn": "Build cescovueapp02",
+      "command": "if [ ! -f ${workspaceFolder}/cescovueapp02-approuter/node_modules/@sap/html5-repo-mock/index.js ] || [ ! -f ${workspaceFolder}/cescovueapp02-approuter/node_modules/@sap/approuter/approuter.js ]; then npm i @sap/approuter && npm i @sap/html5-repo-mock; fi",
+      "options": {
+        "cwd": "${workspaceFolder}/cescovueapp02-approuter"
+      }
+    },
+    {
+      "label": "Build cescovueapp02",
+      "type": "shell",
+      "command": "if [ ! -d ${workspaceFolder}/cescovuemd01/dist ]; then npm run build-cescovuemd01; fi",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}
